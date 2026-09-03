@@ -1,0 +1,34 @@
+{
+  "name": "kaustubh-portfolio-website",
+  "version": "1.0.0",
+  "description": "Portfolio website for Kaustubh Warme — AI/ML Engineer",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Kaustubh Warme",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^26.4.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "framer-motion": "^13.2.0",
+    "lucide-react": "^1.40.0",
+    "next": "^15.3.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^10.9.1",
+    "globals": "^17.12.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.69.0"
+  }
+}

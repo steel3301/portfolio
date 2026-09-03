@@ -1,0 +1,1641 @@
+# Portfolio Website — AI Agent Build Specification
+
+## 1. Objective
+
+Build a premium personal portfolio website for **Kaustubh Ravindra Warme**, an AI-focused Computer Science undergraduate specializing in:
+
+* AI / LLM systems
+* Agentic AI
+* RAG
+* Machine Learning / Deep Learning
+* Computer Vision
+* Federated Learning
+* MLOps
+* Cloud-native engineering
+* Full-stack development
+
+The website must feel like the portfolio of someone who **builds real AI systems**, not someone displaying a list of technologies.
+
+Primary objective:
+
+> Make a recruiter, researcher, engineering manager, or technical founder understand within 30–60 seconds what Kaustubh builds, how technically strong he is, and which projects demonstrate that ability.
+
+Secondary objectives:
+
+* Encourage visitors to inspect projects.
+* Make technical depth obvious without creating visual clutter.
+* Make the resume and contact information easily accessible.
+* Make the site memorable through its visual identity.
+* Communicate an engineering/research personality rather than a corporate template aesthetic.
+
+---
+
+# 2. Core Design Direction
+
+## Visual Aesthetic
+
+Use a refined **Neo-Brutalist** aesthetic.
+
+The design should combine:
+
+* Editorial typography
+* Strong geometric structure
+* Thick borders
+* High contrast
+* Large typography
+* Hard rectangular cards
+* Intentional asymmetry
+* Slightly unconventional layouts
+* Minimal shadows
+* Minimal animation
+* Almost no gradients
+* No glassmorphism
+* No excessive rounded cards
+* No generic SaaS dashboard appearance
+
+Think:
+
+**engineering notebook + modern editorial design + experimental technology lab**
+
+rather than:
+
+**startup landing page + generic developer portfolio**
+
+---
+
+# 3. Design Philosophy
+
+Every visual decision should communicate one of three ideas:
+
+### A. Technical
+
+The visitor should feel that the website belongs to an engineer.
+
+Use:
+
+* system diagrams
+* architecture snippets
+* metrics
+* technical tags
+* repositories
+* deployment information
+* concise technical explanations
+
+### B. Experimental
+
+The site should feel like the work is being actively explored and built.
+
+Use:
+
+* project status indicators
+* "experiments"
+* research notation
+* system labels
+* small technical metadata
+* subtle interactive details
+
+### C. Human
+
+Avoid making the entire portfolio feel like documentation.
+
+Include:
+
+* a short personal introduction
+* current interests
+* research direction
+* career goals
+* a clear way to contact Kaustubh
+
+The site should still feel personal.
+
+---
+
+# 4. Recommended Tech Stack
+
+Prefer a modern React-based stack.
+
+Recommended:
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion for restrained animations
+* MDX or structured TypeScript data for projects
+* Lucide icons or similarly minimal icon system
+* Vercel or equivalent deployment
+
+Do not introduce unnecessary dependencies.
+
+Architecture should remain simple enough that the owner can easily modify:
+
+* projects
+* skills
+* experience
+* research
+* links
+* resume
+* contact information
+
+---
+
+# 5. Information Architecture
+
+Create the following sections:
+
+1. Navigation
+2. Hero
+3. Selected Work
+4. Technical Capabilities
+5. Experience
+6. Research
+7. About
+8. Contact
+9. Footer
+
+The site should be a **single-page portfolio**, with project detail sections/pages where appropriate.
+
+Navigation should remain minimal:
+
+`WORK   ABOUT   RESEARCH   CONTACT`
+
+Persistent CTA:
+
+`RESUME ↗`
+
+Do not create a large traditional navbar.
+
+---
+
+# 6. Hero Section
+
+The hero is the most important section.
+
+The first viewport should immediately establish:
+
+### Name
+
+**KAUSTUBH WARME**
+
+Large typography.
+
+Potential supporting descriptor:
+
+**AI / ML ENGINEER · AGENTIC SYSTEMS · RESEARCH**
+
+or:
+
+**I BUILD AI SYSTEMS THAT MOVE FROM MODELS TO PRODUCTION.**
+
+The exact final headline can be refined by the agent, but it must communicate engineering rather than simply saying:
+
+"I am a passionate developer."
+
+Avoid generic statements.
+
+---
+
+## Hero layout
+
+Use an asymmetric layout.
+
+Example:
+
+Left:
+
+Large name / headline.
+
+Right:
+
+Small technical status panel.
+
+Example:
+
+```text
+CURRENTLY
+
+AI / ML
+Agentic Systems
+Computer Vision
+MLOps
+
+BASED IN
+PUNE, INDIA
+
+STATUS
+OPEN TO AI / ML
+OPPORTUNITIES
+```
+
+The status panel should look like an engineered information block rather than a conventional card.
+
+---
+
+## Hero visual element
+
+Instead of a hero photograph, create a subtle technical visual.
+
+Possibilities:
+
+* animated node graph
+* abstract neural network
+* system architecture
+* terminal-like signal
+* coordinate/grid system
+* dynamically connected nodes
+
+Keep it extremely subtle.
+
+Do NOT create an enormous flashy 3D object.
+
+The typography must remain the visual priority.
+
+---
+
+# 7. Hero Metrics
+
+Near the hero or immediately below it, introduce a compact metrics strip.
+
+Example:
+
+```text
+03    AI / SYSTEM PROJECTS
+85%   SKILL EXTRACTION ACCURACY
+92%   FEDERATED MODEL ACCURACY
+70%   SCREENING TIME REDUCTION
+```
+
+These numbers should come directly from documented project information, not invented metrics. The resume reports 85% skill extraction accuracy and 70% screening-time reduction for the recruitment system, and 92% accuracy for the federated learning project.
+
+Do not overload the site with statistics.
+
+Three or four strong numbers are enough.
+
+---
+
+# 8. Selected Work Section
+
+This should be the centerpiece of the portfolio.
+
+Title:
+
+**SELECTED WORK**
+
+Small supporting text:
+
+`SYSTEMS I HAVE BUILT, DEPLOYED, AND RESEARCHED.`
+
+Create large asymmetric project blocks.
+
+Do NOT use a conventional 3-column card grid.
+
+---
+
+# 9. Project Card Design
+
+Each project should have a visually distinct large block.
+
+Every project block should contain:
+
+### Project number
+
+`01`
+
+### Project title
+
+Example:
+
+**Recruitment Automation Agent**
+
+### One-line value proposition
+
+Example:
+
+`A multi-agent pipeline for automated resume analysis and candidate-job matching.`
+
+### Technical stack
+
+Example:
+
+`LANGCHAIN / AUTOGEN / RAG / FAISS / PINECONE / DOCKER / K8S / AWS`
+
+### Outcome
+
+Example:
+
+`85% skill extraction accuracy`
+
+### CTA
+
+`VIEW SYSTEM →`
+
+---
+
+# 10. Project #1 — Recruitment Automation
+
+Use the resume's actual project information.
+
+Position it as an **agentic AI system**, not merely an HR project.
+
+Key concepts:
+
+* Multi-agent architecture
+* Resume parsing
+* Skill extraction
+* Candidate-job matching
+* Explainable reasoning
+* LangChain
+* AutoGen
+* RAG
+* FAISS
+* Pinecone
+* OpenAI API
+* Docker
+* Kubernetes
+* AWS EC2
+* S3
+
+The resume states that this system achieved 85% skill extraction accuracy and reduced screening time by 70%.
+
+### Visual treatment
+
+Show a simplified pipeline:
+
+```text
+RESUME
+   ↓
+PARSER
+   ↓
+SKILL EXTRACTION
+   ↓
+VECTOR REPRESENTATION
+   ↓
+RAG
+   ↓
+MATCHING AGENT
+   ↓
+EXPLANATION
+```
+
+Make this interactive or animated very subtly.
+
+---
+
+# 11. Project #2 — Federated Learning
+
+This should probably be the most visually impressive project.
+
+Title:
+
+**Federated Brain Aneurysm Detection**
+
+Position it as a distributed AI/research system.
+
+Show:
+
+```text
+HOSPITAL A ─┐
+HOSPITAL B ─┼──→ AGGREGATOR ─→ GLOBAL MODEL
+HOSPITAL C ─┘
+```
+
+Technical concepts:
+
+* 3D CNN
+* Federated Learning
+* FedAvg
+* FedProx
+* asynchronous updates
+* secure gradient sharing
+* Docker
+* Kubernetes
+* distributed clients
+* MLflow
+* AWS S3
+
+The resume describes simulation across 50+ distributed nodes and reports 92% accuracy while keeping data local.
+
+### Interaction
+
+When hovering over a hospital node:
+
+* show client status
+* show local training
+* show model update
+* visually connect to aggregator
+
+Do not make this a game.
+
+Interaction should help communicate architecture.
+
+---
+
+# 12. Project #3 — MGEKO
+
+Title:
+
+**MGEKO**
+
+Subtitle:
+
+`AI + COMPUTER VISION + MULTILINGUAL TRANSLATION`
+
+Show the processing pipeline:
+
+```text
+MANGA PANEL
+     ↓
+TEXT DETECTION
+     ↓
+CONTEXT ANALYSIS
+     ↓
+LLM TRANSLATION
+     ↓
+CACHE
+     ↓
+TRANSLATED OUTPUT
+```
+
+Technical technologies:
+
+* OpenCV
+* LangChain
+* Claude
+* Gemini
+* Flask
+* Docker
+* AWS Lambda
+* S3
+* Redis
+
+The resume reports a 78% BLEU score on manga-specific test sets.
+
+Use comic/manga-inspired visual cues very sparingly.
+
+Do not turn the entire website into an anime aesthetic.
+
+---
+
+# 13. Project Detail Interaction
+
+Clicking:
+
+`VIEW SYSTEM →`
+
+should open an expanded project experience.
+
+Use a structured layout:
+
+```text
+PROBLEM
+↓
+
+APPROACH
+↓
+
+ARCHITECTURE
+↓
+
+IMPLEMENTATION
+↓
+
+RESULTS
+↓
+
+TECHNOLOGY
+↓
+
+REPOSITORY
+```
+
+Each project should explain:
+
+### Problem
+
+What problem was being solved?
+
+### System
+
+What was built?
+
+### Architecture
+
+How do components communicate?
+
+### Engineering
+
+What technologies and infrastructure were used?
+
+### Results
+
+What measurable result was obtained?
+
+### Lessons
+
+What was learned?
+
+This section should prioritize engineering decisions over marketing language.
+
+---
+
+# 14. Technical Capabilities
+
+Do NOT simply create a wall of technology logos.
+
+Instead create an interactive taxonomy.
+
+Title:
+
+**WHAT I WORK WITH**
+
+Organize technologies into categories.
+
+### AI / LLM
+
+* OpenAI
+* Llama
+* Claude
+* Gemini
+* LangChain
+* LlamaIndex
+* AutoGen
+* Hugging Face
+* Embeddings
+* RAG
+* Vector databases
+
+### ML / Computer Vision
+
+* Deep Learning
+* Computer Vision
+* YOLO
+* OpenCV
+* Federated Learning
+* Model Evaluation
+* Continuous Training
+* MLflow
+
+### Engineering
+
+* Python
+* C++
+* JavaScript
+* PHP
+* React
+* Flask
+* FastAPI
+* Redis
+
+### Infrastructure
+
+* Docker
+* Kubernetes
+* AWS
+* Git
+* GitHub Actions
+* CI/CD
+
+### Databases
+
+* MySQL
+* PostgreSQL
+* Redis
+
+These categories and technologies are reflected in the resume's technical skills section.
+
+---
+
+# 15. Skills Interaction
+
+Instead of flashy animations:
+
+On hover:
+
+```text
+LANGCHAIN
+Agent orchestration
+RAG
+Workflow construction
+```
+
+For Kubernetes:
+
+```text
+KUBERNETES
+Container orchestration
+Distributed workloads
+Deployment
+```
+
+Keep descriptions short.
+
+The interaction should communicate competence rather than entertain.
+
+---
+
+# 16. Experience Section
+
+Use a horizontal or vertical timeline.
+
+Title:
+
+**EXPERIENCE**
+
+Each entry should contain:
+
+```text
+2026
+IMEXSHWETEJ GLOBAL LLP
+EXECUTIVE — OPERATIONS & TECHNOLOGY
+```
+
+Include only concise impact statements.
+
+The resume says this role involved technical operations/eCommerce development, React/PHP, Cashfree, GitHub Actions, Docker, AWS, Python automation, and Redis.
+
+Next:
+
+```text
+2025
+WALNUT SCHOOL
+DIGITAL ACADEMIC EXECUTIVE
+```
+
+The resume reports management of academic content for 2,000+ students, internal React/Flask dashboards, and Python reporting automation that reduced manual effort by 40%.
+
+Keep each experience entry compact.
+
+---
+
+# 17. Research Section
+
+Create a visually separate section.
+
+Title:
+
+**RESEARCH / EXPERIMENTS**
+
+Feature:
+
+**Vision-Based PPE Detection for Construction Safety**
+
+Show:
+
+```text
+YOLO
++
+POSE ESTIMATION
++
+EDGE INFERENCE
++
+AWS IoT
+```
+
+Metrics:
+
+```text
+mAP      0.667
+PRECISION 0.829
+```
+
+These values are stated in the resume.
+
+Also show:
+
+**College of Military Engineering — Research Intern**
+
+with a concise description centered on materials research, data analysis, and Python visualization.
+
+---
+
+# 18. About Section
+
+Do not write a conventional long biography.
+
+Use a short editorial statement.
+
+Structure:
+
+```text
+I'M INTERESTED IN THE SPACE
+BETWEEN RESEARCH AND
+REAL SYSTEMS.
+```
+
+Then 1–2 short paragraphs explaining:
+
+* AI interests
+* agentic systems
+* ML infrastructure
+* computer vision
+* distributed learning
+* building systems that move beyond prototypes
+
+Use the resume's actual career positioning as the source. It describes Kaustubh as an AI-focused CS undergraduate with experience in LLMs, agentic AI, RAG, MLOps, federated learning, full-stack development, cloud deployment, and computer vision research.
+
+---
+
+# 19. Education
+
+Do not give education its own giant section.
+
+Place a compact block near About:
+
+```text
+B.Tech — Computer Science
+Vishwakarma Institute of Information Technology
+Pune, India
+Expected 2027
+CGPA 8.4 / 10
+```
+
+The resume lists the degree, expected graduation year, institution, location, and CGPA.
+
+Optionally show coursework as small tags:
+
+`ML · DEEP LEARNING · DISTRIBUTED SYSTEMS · CLOUD · DATABASES`
+
+---
+
+# 20. Contact Section
+
+The contact section should feel like a deliberate endpoint.
+
+Large text:
+
+**LET'S BUILD SOMETHING USEFUL.**
+
+Then:
+
+```text
+EMAIL
+kaustubhwarme@gmail.com
+```
+
+and links to:
+
+* LinkedIn
+* GitHub
+* Resume
+
+The resume provides the email, LinkedIn and GitHub links.
+
+Use one clear CTA:
+
+**GET IN TOUCH →**
+
+Avoid a complicated contact form unless necessary.
+
+For a personal developer portfolio, email and social links are sufficient initially.
+
+---
+
+# 21. Footer
+
+Minimal.
+
+Example:
+
+```text
+KAUSTUBH WARME
+AI / ML / SYSTEMS
+
+PUNE · INDIA
+
+© 2026
+
+GITHUB   LINKEDIN   EMAIL
+```
+
+Add a tiny technical signature:
+
+```text
+BUILT WITH NEXT.JS
+```
+
+Do not add a giant footer.
+
+---
+
+# 22. Color System
+
+Use a small palette.
+
+Recommended:
+
+### Base
+
+Warm off-white / paper:
+
+`#F5F2E9`
+
+### Primary text
+
+Almost-black:
+
+`#111111`
+
+### Accent
+
+Choose one strong accent such as:
+
+* electric blue
+* acid green
+* orange
+* red
+
+Do NOT use all of them.
+
+The accent should appear in:
+
+* hover states
+* active navigation
+* system indicators
+* small labels
+* selected metrics
+
+The overall site should remain mostly monochrome.
+
+---
+
+# 23. Typography
+
+Typography is extremely important.
+
+Use one strong display font and one neutral supporting font.
+
+Suggested direction:
+
+Display:
+
+* Space Grotesk
+* Geist
+* IBM Plex Sans
+* Archivo
+* similar bold grotesque
+
+Supporting:
+
+* Inter
+* IBM Plex Sans
+* Geist
+
+Optional monospace:
+
+* IBM Plex Mono
+* JetBrains Mono
+
+Use monospace only for:
+
+* metadata
+* technology labels
+* system status
+* small technical annotations
+
+Do not use monospace for the entire page.
+
+---
+
+# 24. Borders / Cards
+
+Neo-Brutalist styling should use borders intentionally.
+
+Example:
+
+```css
+border: 2px solid #111;
+```
+
+Cards should feel physical and flat.
+
+Use:
+
+* hard borders
+* tiny corner radius or no radius
+* occasional offset shadows
+
+Example:
+
+```css
+box-shadow: 6px 6px 0 #111;
+```
+
+Do not apply this effect to every element.
+
+Use it selectively for important interactive objects.
+
+---
+
+# 25. Grid
+
+Use a strict underlying grid.
+
+Desktop:
+
+12-column layout.
+
+Mobile:
+
+4-column layout.
+
+Use asymmetric spans.
+
+Example:
+
+```text
+┌───────────────┬───────┐
+│               │       │
+│ PROJECT 01    │ META  │
+│               │       │
+├───────┬───────┴───────┤
+│ STAT  │ ARCHITECTURE   │
+└───────┴───────────────┘
+```
+
+The asymmetry should feel intentional.
+
+Do not randomly position elements.
+
+---
+
+# 26. Animation Rules
+
+Animation should be subtle and purposeful.
+
+Allowed:
+
+* section reveal
+* border expansion
+* project hover movement
+* node activation
+* text reveal
+* smooth navigation
+* tiny cursor interactions
+
+Avoid:
+
+* excessive parallax
+* spinning 3D objects
+* constant background animation
+* particle backgrounds
+* huge page-load animations
+* scroll-jacking
+
+Animation must never interfere with readability or accessibility.
+
+---
+
+# 27. Cursor Interaction
+
+Desktop can have a small custom cursor enhancement.
+
+Example:
+
+Hovering over:
+
+`VIEW SYSTEM →`
+
+causes a small label:
+
+`OPEN`
+
+or a small accent indicator.
+
+Do not replace the normal cursor entirely unless there is a strong accessibility fallback.
+
+---
+
+# 28. Mobile Design
+
+Mobile is not a reduced desktop layout.
+
+Redesign the layout for narrow screens.
+
+Important:
+
+* preserve large typography
+* stack asymmetric sections
+* maintain borders
+* keep navigation simple
+* avoid horizontal overflow
+* make project architecture diagrams scrollable where required
+* ensure all buttons have sufficient touch area
+
+Hero should remain visually strong on mobile.
+
+---
+
+# 29. Accessibility
+
+The agent must implement:
+
+* semantic HTML
+* proper heading hierarchy
+* keyboard navigation
+* visible focus states
+* sufficient contrast
+* alt text
+* accessible buttons
+* reduced motion support
+* accessible external links
+
+Support:
+
+```css
+prefers-reduced-motion
+```
+
+Animations should stop or simplify when required.
+
+---
+
+# 30. Performance
+
+Performance is part of the portfolio's credibility.
+
+Requirements:
+
+* optimize images
+* lazy-load noncritical media
+* minimize JavaScript
+* avoid huge animation libraries when unnecessary
+* optimize fonts
+* use Next.js image optimization
+* avoid video backgrounds
+* avoid unnecessary client components
+
+Target:
+
+* excellent Lighthouse performance
+* fast first contentful paint
+* minimal layout shift
+
+---
+
+# 31. SEO
+
+Add:
+
+* title
+* description
+* Open Graph metadata
+* Twitter/X card metadata
+* canonical URL
+* structured data where appropriate
+
+Suggested title concept:
+
+`Kaustubh Warme — AI / ML Engineer`
+
+Suggested description concept:
+
+`AI/ML engineer building agentic systems, machine learning infrastructure, computer vision and cloud-native applications.`
+
+Do not keyword-stuff.
+
+---
+
+# 32. Content Rules for the AI Agent
+
+This is critical.
+
+The agent must never invent:
+
+* projects
+* employers
+* job titles
+* metrics
+* awards
+* publications
+* technologies
+* certifications
+* links
+* achievements
+
+Use the resume as the source of truth.
+
+Where information is unavailable, either:
+
+1. omit it, or
+2. leave a clearly marked placeholder.
+
+Never fabricate portfolio content.
+
+---
+
+# 33. Content Tone
+
+Avoid:
+
+> "Passionate developer who loves solving problems."
+
+Avoid:
+
+> "Welcome to my digital space."
+
+Avoid:
+
+> "I turn coffee into code."
+
+Avoid generic AI buzzword statements.
+
+Prefer:
+
+> "I build AI systems spanning agents, retrieval, computer vision, and distributed learning."
+
+Prefer concise technical language.
+
+The writing should sound like an engineer/researcher.
+
+---
+
+# 34. Visual Hierarchy
+
+The page should have a clear priority:
+
+### Level 1
+
+Name / positioning
+
+### Level 2
+
+Projects
+
+### Level 3
+
+Engineering capabilities
+
+### Level 4
+
+Experience / research
+
+### Level 5
+
+About / education
+
+### Level 6
+
+Contact
+
+Do not make every section equally loud.
+
+---
+
+# 35. Recommended Page Composition
+
+### SCREEN 01
+
+```text
+KAUSTUBH WARME
+
+AI / ML ENGINEER
+AGENTIC SYSTEMS
+RESEARCH
+
+[STATUS PANEL]
+
+[03 PROJECTS]
+[92% MODEL ACCURACY]
+[85% EXTRACTION]
+```
+
+---
+
+### SCREEN 02
+
+```text
+SELECTED WORK
+
+01
+RECRUITMENT AUTOMATION
+[MULTI-AGENT SYSTEM]
+
+02
+FEDERATED BRAIN
+ANEURYSM DETECTION
+
+03
+MGEKO
+MANGA TRANSLATION
+```
+
+Large project blocks.
+
+---
+
+### SCREEN 03
+
+```text
+SYSTEM ARCHITECTURE
+
+Interactive diagrams
+Technical decisions
+Results
+```
+
+---
+
+### SCREEN 04
+
+```text
+WHAT I WORK WITH
+
+AI / LLM
+ML / CV
+ENGINEERING
+CLOUD / DEVOPS
+DATABASES
+```
+
+---
+
+### SCREEN 05
+
+```text
+EXPERIENCE
+
+2026
+IMEXSHWETEJ
+
+2025
+WALNUT SCHOOL
+```
+
+---
+
+### SCREEN 06
+
+```text
+RESEARCH
+
+PPE DETECTION
+
+mAP 0.667
+PRECISION 0.829
+```
+
+---
+
+### SCREEN 07
+
+```text
+ABOUT
+
+Research → Systems → Production
+
+EDUCATION
+```
+
+---
+
+### SCREEN 08
+
+```text
+LET'S BUILD
+SOMETHING USEFUL.
+
+EMAIL
+GITHUB
+LINKEDIN
+RESUME
+```
+
+---
+
+# 36. Component Architecture
+
+Use reusable components.
+
+Recommended:
+
+```text
+/app
+    /page.tsx
+    /work
+    /about
+
+/components
+    Navbar
+    Hero
+    MetricStrip
+    SectionHeader
+    ProjectCard
+    ProjectArchitecture
+    ProjectDetail
+    SkillsGrid
+    ExperienceTimeline
+    ResearchCard
+    AboutSection
+    ContactSection
+    Footer
+
+/data
+    projects.ts
+    skills.ts
+    experience.ts
+    research.ts
+```
+
+Project information should live in structured data rather than being hardcoded throughout components.
+
+---
+
+# 37. Project Data Structure
+
+Use something approximately like:
+
+```ts
+type Project = {
+  id: string
+  number: string
+  title: string
+  category: string
+  description: string
+  technologies: string[]
+  metrics: {
+    label: string
+    value: string
+  }[]
+  problem: string
+  architecture: string[]
+  implementation: string[]
+  results: string[]
+  github?: string
+}
+```
+
+This makes the site easy to extend.
+
+---
+
+# 38. Interaction Model
+
+The user should be able to:
+
+1. scroll through the main portfolio
+2. inspect projects
+3. expand technical details
+4. view architecture
+5. open GitHub
+6. download the resume
+7. open LinkedIn
+8. email Kaustubh
+
+There should never be more than one or two clicks between a project and its technical details.
+
+---
+
+# 39. Desktop Behavior
+
+At wide desktop widths:
+
+* maximize use of whitespace
+* use asymmetric project grids
+* use large typography
+* keep content width controlled
+* allow technical diagrams to span multiple columns
+
+Do not make text lines excessively wide.
+
+---
+
+# 40. Mobile Behavior
+
+On mobile:
+
+* convert project grids to stacked blocks
+* retain border-based visual identity
+* reduce display font size proportionally
+* keep metrics readable
+* simplify architecture visuals
+* convert desktop navigation into a compact menu
+* preserve generous vertical spacing
+
+---
+
+# 41. Anti-Patterns
+
+The agent must explicitly avoid:
+
+❌ Generic dark developer portfolio
+
+❌ Purple-blue AI gradients
+
+❌ Glassmorphism
+
+❌ Excessive rounded cards
+
+❌ Giant 3D robot
+
+❌ Particle background
+
+❌ Matrix rain
+
+❌ Skill percentage bars
+
+❌ "10+ years of experience" style fake metrics
+
+❌ Huge technology logo wall
+
+❌ Excessive animations
+
+❌ Stock AI imagery
+
+❌ Long paragraphs
+
+❌ Fake testimonials
+
+❌ Fake GitHub activity
+
+❌ Fake project screenshots
+
+❌ Invented achievements
+
+---
+
+# 42. Neo-Brutalist Rules
+
+The final visual system should follow these rules:
+
+```text
+HIGH CONTRAST
++
+STRONG TYPOGRAPHY
++
+VISIBLE STRUCTURE
++
+HARD EDGES
++
+ASYMMETRIC GRID
++
+MINIMAL COLOR
++
+MINIMAL DECORATION
++
+PURPOSEFUL INTERACTION
+```
+
+The design should look deliberately constructed.
+
+It should not look unfinished.
+
+That distinction is important.
+
+---
+
+# 43. Brand Personality
+
+The site should communicate:
+
+**Technical**
+
+"I understand systems."
+
+**Experimental**
+
+"I build and investigate things."
+
+**Precise**
+
+"I care about implementation."
+
+**Ambitious**
+
+"I'm interested in difficult AI problems."
+
+**Minimal**
+
+"I don't need decoration to prove technical ability."
+
+---
+
+# 44. Implementation Process for the AI Agent
+
+The coding agent should work in this order:
+
+### Phase 1 — Content
+
+Extract all verified portfolio information from the resume and convert it into structured data.
+
+### Phase 2 — Design system
+
+Create:
+
+* colors
+* typography
+* spacing
+* border system
+* grid
+* shadows
+* buttons
+* interaction states
+
+### Phase 3 — Layout
+
+Build:
+
+* navbar
+* hero
+* metrics
+* projects
+* skills
+* experience
+* research
+* about
+* contact
+* footer
+
+### Phase 4 — Project interactions
+
+Add:
+
+* hover states
+* project expansion
+* architecture diagrams
+* subtle transitions
+
+### Phase 5 — Responsive design
+
+Optimize desktop, tablet, and mobile independently.
+
+### Phase 6 — Accessibility
+
+Test keyboard navigation, focus states, contrast, reduced motion, and semantic markup.
+
+### Phase 7 — Performance
+
+Optimize:
+
+* fonts
+* images
+* bundles
+* client-side JavaScript
+* animations
+
+### Phase 8 — Final polish
+
+Check:
+
+* spacing consistency
+* typography hierarchy
+* alignment
+* visual rhythm
+* responsive behavior
+* links
+* resume download
+* metadata
+
+---
+
+# 45. Quality Gate
+
+Do not consider the site complete until all of these are true:
+
+[ ] The first viewport immediately communicates AI/ML + engineering.
+
+[ ] Projects are the visual centerpiece.
+
+[ ] Neo-Brutalist styling is obvious but sophisticated.
+
+[ ] No generic template appearance remains.
+
+[ ] Every major claim is supported by actual resume information.
+
+[ ] Project architecture is understandable.
+
+[ ] Typography creates strong visual hierarchy.
+
+[ ] Mobile layout is deliberately designed.
+
+[ ] Animations are subtle.
+
+[ ] Accessibility is implemented.
+
+[ ] Lighthouse performance is strong.
+
+[ ] GitHub / LinkedIn / email / resume links work.
+
+[ ] No placeholder content remains.
+
+[ ] No fabricated metrics or achievements exist.
+
+[ ] The site feels like as serious AI engineer's portfolio rather than an undergraduate template.
+
+---
+
+# 46. Final Design Test
+
+Before delivering the website, the AI agent should ask itself:
+
+> "If the text were removed, would the visual system still feel like a technical portfolio?"
+
+Then:
+
+> "If the visual styling were removed, would the projects still demonstrate serious engineering ability?"
+
+The answer to both should be yes.
+
+The website's differentiation should come from the combination of:
+
+**strong visual identity + technically credible work + unusually clear presentation.**
+
+That is the target.
