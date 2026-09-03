@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import FloatingContactButton from "@/components/FloatingContactButton";
 import Footer from "@/components/Footer";
+import RouteLoadingBar from "@/components/RouteLoadingBar";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -79,6 +81,9 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable}`}
     >
       <body className="bg-paper text-ink antialiased flex flex-col min-h-screen">
+        <Suspense fallback={null}>
+          <RouteLoadingBar />
+        </Suspense>
         <Navbar />
         <main className="flex-1 pt-14">{children}</main>
         <ContactSection />
