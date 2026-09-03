@@ -157,12 +157,12 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
               <div>
                 <a
                   href={project.github}
-                  className="btn-primary"
+                  className="btn-primary flex items-center gap-2 inline-flex"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} on GitHub (opens in new tab)`}
                 >
-                  VIEW ON GITHUB ↗
+                  <span>VIEW ON GITHUB ↗</span>
                 </a>
               </div>
             )}

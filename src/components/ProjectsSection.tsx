@@ -91,11 +91,13 @@ function ProjectCard({ project, index, reversed }: ProjectCardProps) {
           {/* CTA */}
           <div>
             <button
-              onClick={() => setDetailOpen(true)}
-              className="btn-secondary group-hover:bg-ink group-hover:text-paper transition-all duration-200"
+              onClick={() => {
+                setDetailOpen(true);
+              }}
+              className="btn-secondary group-hover:bg-ink group-hover:text-paper transition-all duration-200 flex items-center gap-2"
               aria-label={`View system details for ${project.title}`}
             >
-              VIEW SYSTEM →
+              <span>VIEW SYSTEM →</span>
             </button>
           </div>
         </div>

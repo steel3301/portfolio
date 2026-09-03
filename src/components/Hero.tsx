@@ -1,6 +1,10 @@
 "use client";
 
+import { useState, useTransition } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { Loader2 } from "lucide-react";
 import NodeGraph from "./NodeGraph";
 
 const fadeUp = {
@@ -9,6 +13,18 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const router = useRouter();
+  const [loadingTarget, setLoadingTarget] = useState<string | null>(null);
+  const [, startTransition] = useTransition();
+
+  const handleNavigate = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setLoadingTarget(href);
+    startTransition(() => {
+      router.push(href);
+    });
+  };
+
   return (
     <section
       id="top"
@@ -78,26 +94,26 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex flex-wrap gap-3"
             >
-              <a
-                href="#work"
-                className="btn-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <Link
+                href="/projects"
+                className="btn-primary flex items-center gap-2"
+                onClick={(e) => handleNavigate(e, "/projects")}
               >
-                VIEW WORK →
-              </a>
-              <a
-                href="#contact"
-                className="btn-secondary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
+                {loadingTarget === "/projects" ? (
+                  <Loader2 size={16} className="animate-spin text-paper" />
+                ) : null}
+                <span>VIEW PROJECTS →</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="btn-secondary flex items-center gap-2"
+                onClick={(e) => handleNavigate(e, "/contact")}
               >
-                GET IN TOUCH
-              </a>
+                {loadingTarget === "/contact" ? (
+                  <Loader2 size={16} className="animate-spin text-accent" />
+                ) : null}
+                <span>GET IN TOUCH</span>
+              </Link>
             </motion.div>
           </div>
 

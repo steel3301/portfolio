@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink, Loader2 } from "lucide-react";
 
 // Inline SVGs for social icons not in lucide-react v1.x
 const GithubIcon = ({ size = 16 }: { size?: number }) => (
@@ -41,10 +41,15 @@ const contactLinks = [
   },
 ];
 
-
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [loadingBtn, setLoadingBtn] = useState<string | null>(null);
+
+  const handleButtonClick = (id: string) => {
+    setLoadingBtn(id);
+    setTimeout(() => setLoadingBtn(null), 1000);
+  };
 
   return (
     <section id="contact" className="border-b-2 border-ink" aria-labelledby="contact-heading">
@@ -75,10 +80,12 @@ export default function ContactSection() {
             <div>
               <a
                 href="mailto:kaustubhwarme@gmail.com"
-                className="btn-primary text-base py-4 px-8"
+                onClick={() => handleButtonClick("get-in-touch")}
+                className="btn-primary text-base py-4 px-8 inline-flex items-center gap-2"
                 aria-label="Send email to Kaustubh Warme"
               >
-                GET IN TOUCH →
+                {loadingBtn === "get-in-touch" && <Loader2 size={18} className="animate-spin text-paper" />}
+                <span>GET IN TOUCH →</span>
               </a>
             </div>
           </motion.div>
@@ -100,13 +107,18 @@ export default function ContactSection() {
                   <a
                     key={link.label}
                     href={link.href}
+                    onClick={() => handleButtonClick(link.label)}
                     target={link.href.startsWith("mailto") ? undefined : "_blank"}
                     rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     className="flex items-center justify-between px-5 py-4 hover:bg-ink hover:text-paper transition-all duration-150 group"
                     aria-label={`${link.label}: ${link.display}`}
                   >
                     <div className="flex items-center gap-3">
-                      <Icon size={16} className="text-accent group-hover:text-paper transition-colors" />
+                      {loadingBtn === link.label ? (
+                        <Loader2 size={16} className="animate-spin text-accent group-hover:text-paper" />
+                      ) : (
+                        <Icon size={16} className="text-accent group-hover:text-paper transition-colors" />
+                      )}
                       <div>
                         <p className="label-upper text-ink-muted group-hover:text-paper/60 transition-colors">
                           {link.label}
@@ -127,12 +139,14 @@ export default function ContactSection() {
               <p className="label-upper text-ink-muted mb-3">RESUME</p>
               <a
                 href="#"
-                className="btn-secondary w-full justify-center"
+                onClick={() => handleButtonClick("resume-download")}
+                className="btn-secondary w-full justify-center flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download resume (opens in new tab)"
               >
-                DOWNLOAD RESUME ↗
+                {loadingBtn === "resume-download" && <Loader2 size={14} className="animate-spin text-accent" />}
+                <span>DOWNLOAD RESUME ↗</span>
               </a>
             </div>
           </motion.div>
