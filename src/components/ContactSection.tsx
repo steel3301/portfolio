@@ -67,7 +67,7 @@ export default function ContactSection() {
             className="md:col-span-7 px-6 md:px-10 py-16 md:py-20 border-b-2 md:border-b-0 md:border-r-2 border-ink flex flex-col justify-between gap-12"
           >
             <div>
-              <p className="label-upper text-ink-muted mb-6">08 / CONTACT</p>
+              <p className="label-upper text-ink-muted mb-6">CONTACT</p>
               <h2
                 id="contact-heading"
                 className="font-display font-bold text-ink uppercase leading-tight tracking-tight"

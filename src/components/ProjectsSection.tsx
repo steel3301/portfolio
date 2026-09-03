@@ -164,8 +164,8 @@ export default function ProjectsSection() {
   return (
     <section id="work" className="border-b-2 border-ink" aria-labelledby="work-heading">
       <div className="max-w-[1400px] mx-auto">
-        {/* Section header */}
-        <div ref={ref} className="px-6 md:px-10 py-10 md:py-14 border-b-2 border-ink">
+        {/* Section header (NO BOTTOM BORDER) */}
+        <div ref={ref} className="px-6 md:px-10 py-8 md:py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -179,13 +179,14 @@ export default function ProjectsSection() {
         </div>
 
         {/* Layout with Sticky Legend Sidebar + Projects Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-ink items-start relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-ink items-start relative border-t-2 border-ink">
           {/* Sticky Keyword Legend Sidebar */}
           <aside className="lg:col-span-4 p-6 md:p-8 bg-paper/70 lg:sticky lg:top-20 self-start max-h-[calc(100vh-6rem)] overflow-y-auto z-10">
             <div className="flex flex-col gap-6">
-              <div className="flex items-center justify-between pb-2 border-b-2 border-ink">
-                <p className="font-display font-bold text-ink text-sm md:text-base flex items-center gap-2 uppercase tracking-wide">
-                  <Filter size={16} className="text-accent" /> KEYWORD LEGEND
+              {/* Keyword Legend Title (NO BOTTOM BORDER) */}
+              <div className="flex items-center justify-between pb-1">
+                <p className="font-display font-bold text-ink text-lg md:text-xl flex items-center gap-2 uppercase tracking-wide">
+                  <Filter size={18} className="text-accent" /> KEYWORD LEGEND
                 </p>
                 {selectedTags.length > 0 && (
                   <button
@@ -197,11 +198,11 @@ export default function ProjectsSection() {
                 )}
               </div>
 
-              {/* Categorized Keyword Legend */}
+              {/* Categorized Keyword Legend (NO BORDERS AROUND CATEGORY HEADINGS, ENLARGED FONT) */}
               <div className="space-y-6">
                 {Object.entries(KEYWORD_CATEGORIES).map(([category, tags]) => (
-                  <div key={category} className="border-t border-ink/20 pt-4 first:border-t-0 first:pt-0">
-                    <p className="font-display font-bold text-ink uppercase text-xs md:text-sm tracking-wide mb-3 bg-paper border border-ink px-2.5 py-1.5 shadow-neo-sm inline-block w-full">
+                  <div key={category} className="pt-2">
+                    <p className="font-display font-bold text-ink uppercase text-base md:text-lg tracking-tight mb-3">
                       {category}
                     </p>
                     <div className="flex flex-wrap gap-1.5">

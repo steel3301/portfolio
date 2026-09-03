@@ -96,7 +96,7 @@ export default function SkillsGrid() {
             transition={{ duration: 0.5 }}
             className="md:col-span-8"
           >
-            <p className="label-upper text-ink-muted mb-3">04 / CAPABILITIES</p>
+            <p className="label-upper text-ink-muted mb-3">CAPABILITIES</p>
             <h2 id="skills-heading" className="heading-section text-ink">
               WHAT I<br />WORK WITH
             </h2>

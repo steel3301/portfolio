@@ -34,7 +34,7 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
           {/* Header */}
           <div className="sticky top-0 bg-paper border-b-2 border-ink px-8 py-5 flex items-start justify-between z-10">
             <div>
-              <p className="label-upper text-ink-muted mb-1">{project.number} / SYSTEM DETAIL</p>
+              <p className="label-upper text-ink-muted mb-1">SYSTEM DETAIL</p>
               <h2 className="font-display font-bold text-xl uppercase tracking-tight text-ink">
                 {project.title}
               </h2>

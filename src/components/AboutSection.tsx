@@ -23,7 +23,7 @@ export default function AboutSection() {
 
         {/* Header */}
         <div className="px-6 md:px-10 py-12 md:py-16 border-b-2 border-ink">
-          <p className="label-upper text-ink-muted mb-3">07 / ABOUT</p>
+          <p className="label-upper text-ink-muted mb-3">ABOUT</p>
           <h2 id="about-heading" className="heading-section text-ink sr-only">About</h2>
         </div>
 

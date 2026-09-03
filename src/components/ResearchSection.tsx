@@ -116,7 +116,7 @@ export default function ResearchSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <p className="label-upper text-ink-muted mb-3">06 / RESEARCH</p>
+            <p className="label-upper text-ink-muted mb-3">RESEARCH</p>
             <h2 id="research-heading" className="heading-section text-ink">
               RESEARCH /<br />EXPERIMENTS
             </h2>
