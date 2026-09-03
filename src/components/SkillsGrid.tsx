@@ -58,12 +58,17 @@ function CategoryBlock({ category }: { category: SkillCategory }) {
       className="border-b-2 border-ink last:border-b-0 px-6 md:px-10 py-8 grid grid-cols-1 md:grid-cols-12 gap-6"
     >
       {/* Category label */}
-      <div className="md:col-span-3">
-        <p className="label-upper text-ink font-bold">{category.label}</p>
+      <div className="md:col-span-4">
+        <div className="border-2 border-ink bg-paper p-3 shadow-neo-sm inline-block w-full">
+          <p className="font-display font-bold text-ink uppercase tracking-wide text-base md:text-lg flex items-center gap-2">
+            <span className="w-2.5 h-2.5 bg-accent inline-block border border-ink"></span>
+            {category.label}
+          </p>
+        </div>
       </div>
 
       {/* Skills */}
-      <div className="md:col-span-9 flex flex-wrap gap-2">
+      <div className="md:col-span-8 flex flex-wrap gap-2 items-center">
         {category.skills.map((skill) => (
           <SkillTag key={skill.name} skill={skill} />
         ))}

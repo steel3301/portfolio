@@ -2,7 +2,7 @@
 
 import { useRef, useState, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
-import { Search, X, Filter, Layers } from "lucide-react";
+import { X, Filter, Layers } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 import ProjectDetail from "./ProjectDetail";
 
@@ -123,7 +123,7 @@ function ProjectCard({ project, index, reversed }: ProjectCardProps) {
 
 // Group keywords into categories for the filter sidebar
 const KEYWORD_CATEGORIES: Record<string, string[]> = {
-  "AI & ML": ["Agentic AI", "PyTorch", "LLMs", "RAG", "LangChain", "Deep Learning", "Federated Learning", "Privacy-Preserving AI"],
+  "AI & MACHINE LEARNING": ["Agentic AI", "PyTorch", "LLMs", "RAG", "LangChain", "Deep Learning", "Federated Learning", "Privacy-Preserving AI"],
   "COMPUTER VISION": ["Computer Vision", "YOLOv8", "OpenCV", "DeepSORT", "Real-Time Systems", "Object Detection"],
   "INFRASTRUCTURE & DEPLOYMENT": ["Docker", "AWS", "FastAPI", "WebRTC", "Redis", "Flask", "GitHub Actions"],
 };
@@ -132,7 +132,6 @@ export default function ProjectsSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const toggleTag = (tag: string) => {
@@ -142,21 +141,12 @@ export default function ProjectsSection() {
   };
 
   const clearFilters = () => {
-    setSearchQuery("");
     setSelectedTags([]);
   };
 
-  // Filter projects based on query & selected tags
+  // Filter projects based on selected tags
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
-      const q = searchQuery.toLowerCase().trim();
-      const matchesQuery =
-        !q ||
-        project.title.toLowerCase().includes(q) ||
-        project.tagline.toLowerCase().includes(q) ||
-        project.category.toLowerCase().includes(q) ||
-        project.technologies.some((t) => t.toLowerCase().includes(q));
-
       const matchesTags =
         selectedTags.length === 0 ||
         selectedTags.every(
@@ -165,9 +155,9 @@ export default function ProjectsSection() {
             project.category.toLowerCase() === st.toLowerCase()
         );
 
-      return matchesQuery && matchesTags;
+      return matchesTags;
     });
-  }, [searchQuery, selectedTags]);
+  }, [selectedTags]);
 
   return (
     <section id="work" className="border-b-2 border-ink" aria-labelledby="work-heading">
@@ -191,45 +181,25 @@ export default function ProjectsSection() {
           {/* Sticky Keyword Legend Sidebar */}
           <aside className="lg:col-span-4 p-6 md:p-8 bg-paper/70 lg:sticky lg:top-20 self-start max-h-[calc(100vh-6rem)] overflow-y-auto z-10">
             <div className="flex flex-col gap-6">
-              <div className="flex items-center justify-between">
-                <p className="label-upper text-ink flex items-center gap-2 font-bold">
-                  <Filter size={14} className="text-accent" /> KEYWORD LEGEND
+              <div className="flex items-center justify-between pb-2 border-b-2 border-ink">
+                <p className="font-display font-bold text-ink text-sm md:text-base flex items-center gap-2 uppercase tracking-wide">
+                  <Filter size={16} className="text-accent" /> KEYWORD LEGEND
                 </p>
-                {(searchQuery || selectedTags.length > 0) && (
+                {selectedTags.length > 0 && (
                   <button
                     onClick={clearFilters}
                     className="label-upper text-xs text-accent hover:underline flex items-center gap-1 font-bold"
                   >
-                    CLEAR <X size={12} />
-                  </button>
-                )}
-              </div>
-
-              {/* Search input */}
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="SEARCH PROJECTS..."
-                  className="w-full bg-paper border-2 border-ink px-4 py-2.5 pl-10 font-mono text-xs text-ink placeholder:text-ink-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent shadow-neo-sm"
-                />
-                <Search size={16} className="absolute left-3 top-3 text-ink-muted" />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-3 text-ink-muted hover:text-ink"
-                  >
-                    <X size={14} />
+                    CLEAR ({selectedTags.length}) <X size={12} />
                   </button>
                 )}
               </div>
 
               {/* Categorized Keyword Legend */}
-              <div className="space-y-5">
+              <div className="space-y-6">
                 {Object.entries(KEYWORD_CATEGORIES).map(([category, tags]) => (
                   <div key={category} className="border-t border-ink/20 pt-4 first:border-t-0 first:pt-0">
-                    <p className="label-upper text-ink-muted text-[0.65rem] mb-2 font-bold tracking-wider">
+                    <p className="font-display font-bold text-ink uppercase text-xs md:text-sm tracking-wide mb-3 bg-paper border border-ink px-2.5 py-1.5 shadow-neo-sm inline-block w-full">
                       {category}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -239,7 +209,7 @@ export default function ProjectsSection() {
                           <button
                             key={keyword}
                             onClick={() => toggleTag(keyword)}
-                            className={`label-upper text-[0.68rem] px-2.5 py-1 border border-ink transition-all duration-150 ${
+                            className={`label-upper text-[0.7rem] px-2.5 py-1 border border-ink transition-all duration-150 ${
                               active
                                 ? "bg-accent text-paper font-bold shadow-neo-sm border-accent"
                                 : "bg-paper text-ink hover:bg-ink hover:text-paper"
@@ -258,19 +228,13 @@ export default function ProjectsSection() {
 
           {/* Right side Projects List (scrollable) */}
           <main className="lg:col-span-8 p-6 md:p-8 flex flex-col gap-8">
-            <div className="flex items-center justify-between border-b-2 border-ink pb-4">
-              <p className="label-upper text-ink-muted text-xs">
-                SHOWING {filteredProjects.length} OF {projects.length} PROJECTS
-              </p>
-            </div>
-
             {filteredProjects.length === 0 ? (
               <div className="border-2 border-ink p-12 text-center bg-paper shadow-neo">
                 <p className="font-display font-bold text-ink uppercase text-xl mb-2">
                   NO MATCHING PROJECTS FOUND
                 </p>
                 <p className="label-upper text-ink-muted mb-6 text-xs">
-                  TRY ADJUSTING YOUR KEYWORD FILTERS OR SEARCH QUERY.
+                  TRY ADJUSTING YOUR KEYWORD FILTERS.
                 </p>
                 <button onClick={clearFilters} className="btn-primary py-2.5 px-6 text-xs">
                   RESET FILTERS
