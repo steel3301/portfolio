@@ -138,14 +138,11 @@ export default function ContactSection() {
             <div className="border-2 border-ink p-5">
               <p className="label-upper text-ink-muted mb-3">RESUME</p>
               <a
-                href="#"
-                onClick={() => handleButtonClick("resume-download")}
+                href="/Kaustubh_Warme.pdf"
+                download="Kaustubh_Warme.pdf"
                 className="btn-secondary w-full justify-center flex items-center gap-2"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download resume (opens in new tab)"
+                aria-label="Download resume"
               >
-                {loadingBtn === "resume-download" && <Loader2 size={14} className="animate-spin text-accent" />}
                 <span>DOWNLOAD RESUME ↗</span>
               </a>
             </div>

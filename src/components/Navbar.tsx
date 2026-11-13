@@ -12,6 +12,7 @@ const navLinks = [
   { label: "EXPERIENCE", href: "/experience" },
   { label: "RESEARCH", href: "/research" },
   { label: "CONTACT", href: "/contact" },
+  { label: "BLOG", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -94,17 +95,11 @@ export default function Navbar() {
               );
             })}
             <a
-              href="#"
+              href="/Kaustubh_Warme.pdf"
+              download="Kaustubh_Warme.pdf"
               className="btn-secondary py-2 px-4 text-[0.65rem] flex items-center gap-1.5"
-              aria-label="Download resume (opens in new tab)"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                setLoadingHref("resume");
-                setTimeout(() => setLoadingHref(null), 1000);
-              }}
+              aria-label="Download resume"
             >
-              {loadingHref === "resume" && <Loader2 size={12} className="animate-spin text-accent" />}
               <span>RESUME ↗</span>
             </a>
           </div>
